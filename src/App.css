@@ -1,38 +1,340 @@
-.App {
+
+
+/* Header component styling */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: #8a2b06;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.main-image {
+  width: 100%;
+  height: 25rem;
+  z-index: 0;
+  overflow: hidden;
+}
+.main-image img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
+  
+}
+
+/* CartButton Styling */
+.btn {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background: #4d1601;
+  color: white;
+  padding: 0.75rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+}
+.btn:active,
+.btn:hover{
+  background: #2c0d00;
+}
+
+.icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.badge {
+  background: #b94517;
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+.btn:hover .badge,
+.btn:active .badge{
+  background: #92320c;
+}
+
+
+/* Meals Component styling */
+.summary {
   text-align: center;
+  width:  45rem;
+  max-width: 90%;
+  margin: auto;
+  margin-top: -10rem;
+  position: relative;
+  background: #383838;
+  padding: 1rem;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+}
+.summary h2 {
+  font-size: 2rem;
+  margin-top: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.meals {
+  width: 60rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  animation: meals-appear 2s ease-out forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.meals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card{
+  background: #fff;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+/* Meals item styling */
+.meal_item{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal_item h3 {
+  margin: 0 0 0.25rem 0;
+}
+.description{
+  font-style: italic;
+
+}
+.price{
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
+
+/* styling the form component */
+.form{
+  text-align: right;
+}
+.form button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  color: #fff;
+  background: #8a2b06;
+  border: 1px solid #8a2b06;
+  font-weight: bold;
+}
+
+.form button:hover,
+.form button:active{
+  background: #641e03;
+  border: 1px solid #641e03;
+}
+.input{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.input label {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+.input input{
+  width: 3rem;
+  border-radius: 5px;
+  padding-left: 0.5rem;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+/* Styling the Cart and Modal */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modal {
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  width: 90%;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  animation: slide-down 3000ms ease-out forwards;
+  z-index: 30;
+  
+}
+.cart-items{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 20rem;
+  overflow:  auto;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.actions{
+  text-align: right;
+}
+.actions button{
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  border: 1px solid #8a2b06;
+  border-radius: 25px;
+  margin-left: 1rem;
+
+}
+.actions button:hover,
+.actions button:active{
+  border: 1px solid #5a1a01;
+  background-color: #5a1a01;
+  color: #fff;
+}
+
+
+.actions .btn-close{
+  color: #8a2b06;
+}
+.actions .btn-order{
+  background-color: #8a2b06;
+  color: #fff;
+}
+
+/* styling each cart item */
+
+.cartItem {
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-bottom: 2px solid #8a2b06;
+
+}
+
+.cartItem h2 {
+  margin: 0 0 0.5rem 0;
+  color: #363636;
+}
+.cartItem__summary {
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartItem__price{
+  font-weight: bold;
+  color: #8a2b06;
+}
+.cartItem__amount{
+  font-weight: bold;
+  color: #363636;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+}
+.cartItem__actions{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+.cartItem button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #8a2b06;
+  border: 1px solid #8a2b06;
+  width: 3rem;
+  border-radius: 6px;
+  margin: 0.25rem;
+  margin-left: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cartItem button:hover,
+.cartItem button:active {
+  background-color: #8a2b06;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 760px) {
+  .modal{
+    width: 40rem;
+    left: calc(50% - 20rem);
+  } 
+  .cartItem__actions{
+    flex-direction: row;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+
+@keyframes slide-down{
+  from{
+    opacity: 0;
+    transform: translateY(-3rem);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
