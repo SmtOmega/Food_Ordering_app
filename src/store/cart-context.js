@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useState } from "react";
-import cartReducer, { ADD_ITEM, REMOVE_ITEM } from "../store/cartReducer";
+import cartReducer, { ADD_ITEM, CLEAR_CART, REMOVE_ITEM } from "../store/cartReducer";
 
 const initialState = {
   items: [],
@@ -18,8 +18,12 @@ const CartProvider = ({ children }) => {
     dispatch({type: REMOVE_ITEM, payload: id})
   }
 
+  const clearCart = () => {
+    dispatch({type: CLEAR_CART})
+  }
+
   return (
-    <CartContext.Provider value={{ ...state, addItem, removeItem }}>
+    <CartContext.Provider value={{ ...state, addItem, removeItem, clearCart }}>
       {children}
     </CartContext.Provider>
   );

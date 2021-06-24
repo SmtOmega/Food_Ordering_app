@@ -297,10 +297,70 @@
 
 
 
+/*styling the checkout form */
+
+.checkout-form {
+  margin: 1rem 0;
+  height: 19rem;
+  overflow: auto;
+}
+
+.checkout-form-control {
+  margin-bottom: 0.5rem;
+}
+.checkout-form-control label {
+  margin-bottom: 00.25rem;
+  font-weight: bold;
+  display: block;
+}
+
+.checkout-form-control input{
+  width: 20rem;
+  font-weight: inherit;
+  border-radius: 4px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+}
+.checkout-action {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.checkout-action button {
+  font: inherit;
+  color: #5a1a01;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  border: none;
+}
+.checkout-action button:active,
+.checkout-action button:hover{
+  background: #ffe6dc;
+}
+.checkout-action .submit{
+  border: 1px solid #5a1a01;
+  background: #5a1a01;
+  color: #fff;
+}
+
+.checkout-action .submit:active,
+.checkout-action .submit:hover{
+  background: #7a2706;
+}
 
 
+/* styling form validation */
 
+.invalid label {
+  color: #ca3e51;
+}
 
+.invalid input {
+  border-color: #aa0b20;
+  background: #ffeff1;
+}
 
 
 

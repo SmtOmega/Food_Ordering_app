@@ -1,5 +1,6 @@
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
+export const CLEAR_CART = "CLEAR_CART"
 
 const cartReducer = (state, action) => {
   if (action.type === ADD_ITEM) {
@@ -53,7 +54,9 @@ const cartReducer = (state, action) => {
     
   }
 
-
+  if(action.type === CLEAR_CART){
+    return {items: [], total: 0}
+  }
   return state;
 };
 
