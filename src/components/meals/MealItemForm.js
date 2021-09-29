@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { useGlobalCartContext } from "../../store/cart-context";
 
 const MealItemForm = ({onAddToCart, id}) => {
     

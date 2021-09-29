@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from "react";
+import React, { useContext, useReducer} from "react";
 import cartReducer, { ADD_ITEM, CLEAR_CART, REMOVE_ITEM } from "../store/cartReducer";
 
 const initialState = {
